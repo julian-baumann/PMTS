@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>PMTS</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="config.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0"/>
+    </head>
+
+    <body>
+        <div id="DropArea">
+            <div id="SelectFilesBox">
+                <img class="Icon" src="assets/images/Logo.png" />
+                <h1>PMTS</h1>
+                <div class="LinkInputBox">
+                    <input type="text" id="LinkInput" placeholder="Link" onkeyup="OnKeyPressInLinkInput(event)" >
+                    <svg onclick="OpenLink()" xmlns="http://www.w3.org/2000/svg" class="GoIcon Clickable" viewBox="0 0 512 512"><title>Arrow Forward Circle</title><path d="M464 256c0-114.87-93.13-208-208-208S48 141.13 48 256s93.13 208 208 208 208-93.13 208-208zm-212.65 91.36a16 16 0 01-.09-22.63L303.58 272H170a16 16 0 010-32h133.58l-52.32-52.73A16 16 0 11274 164.73l79.39 80a16 16 0 010 22.54l-79.39 80a16 16 0 01-22.65.09z"/></svg>
+                </div>
+
+                <h4>Or</h4>
+
+                <button onclick="OpenFileSelect()">Select Files</button>
+                <input type="file" id="FileInput" class="Hidden" onchange="SendFromInput()">
+
+                <div id="Controls" class="Hidden">
+                    <button id="StopPlaybackButton" onclick="StopPlayback()">Stop</button>
+                </div>
+            </div>
+    
+            <div id="DropToSelectBox" class="Hidden">
+                <ion-icon class="DropItemsIcon" name="chevron-down-outline"></ion-icon>
+                <img src="assets/icons/chevron-down.svg" class="DropItemsIcon Icon" />
+                <h1>Release to select</h1>
+            </div>
+
+        </div>
+    </body>
+
+    <script src="script.js"></script>
+</html>

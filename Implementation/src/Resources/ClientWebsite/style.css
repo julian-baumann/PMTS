@@ -1,0 +1,178 @@
+body
+{
+    font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", sans-serif;
+}
+
+#DropArea
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#DropArea.IsDragging
+{
+    background: #54ACD2;
+    border: dashed 2px black;
+    height: calc(100% - 4px);
+    width: calc(100% - 4px);
+}
+
+#DropArea.IsDragging .DropItemsIcon
+{
+    animation: Bounce;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+#SelectFilesBox, #DropToSelectBox
+{
+    text-align: center;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;
+    overflow: hidden;
+}
+
+#DropArea.IsDragging #SelectFilesBox, #DropToSelectBox
+{
+    pointer-events: none;
+}
+
+#SelectFilesBox
+{
+    padding-bottom: 20px;
+}
+
+.Icon
+{
+    width: 5em;
+    height: 5em;
+}
+
+.Hidden
+{
+    display: none;
+}
+
+button
+{
+    background: #3880ff;
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 16px;
+    padding: 12px;
+    font-size: 1em;
+    cursor: pointer;
+    outline: none;
+    transition: 0.2s ease-in-out;
+}
+
+.Clickable
+{
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+button:hover, .Clickable:hover
+{
+    transform: scale(1.1);
+}
+
+button:active, .Clickable:active
+{
+    opacity: 0.5;
+    transform: scale(0.9);
+}
+
+#Controls
+{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 20px;
+}
+
+#StopPlaybackButton
+{
+    background: #eb445a;
+}
+
+.LinkInputBox
+{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width: 90vw;
+    margin: 20px;
+}
+
+#LinkInput
+{
+    display: block;
+    width: 100%;
+    background: rgb(233, 233, 233);
+    height: 20px;
+    border-radius: 8px;
+    border: none;
+    padding: 5px;
+    max-width: 300px;
+    outline: none;
+}
+
+#LinkInput:focus
+{
+    border: 2px solid #3880ff;
+}
+
+.GoIcon
+{
+    height: 40px;
+    width: 40px;
+    fill: #3880ff;
+    display: inline;
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark)
+{
+    body
+    {
+        background: #201f1f;
+        color: white;
+    }
+
+    #LinkInput
+    {
+        background: rgb(80, 76, 76);
+        color: white;
+    }
+}
+
+@keyframes Bounce
+{
+    0%
+    {
+        transform: translateY(0);
+    }
+    50%
+    {
+        transform: translateY(30px);
+    }
+    100%
+    {
+        transform: translateY(0);
+    }
+}

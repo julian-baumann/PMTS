@@ -1,0 +1,10 @@
+{
+    "port": 8010,
+    "qrCodeWindow": {
+        "show": true,
+        "alwaysOnTop": true,
+        "size": 300,
+        "x": 0,
+        "y": 0
+    }
+}
